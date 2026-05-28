@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BIN">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/fd/famidash-main/BIN/BIN.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

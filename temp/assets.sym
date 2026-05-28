@@ -1,0 +1,72 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [32-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =   00002710 L
+    .__.ABS.                                                    =   00000000 G
+    .__.CPU.                                                    =   00000000 L
+    .__.H$L.                                                    =   00000000 L
+  0 _MAX_LEVELS                                                     0000151E GR
+    ___bank_famidash_chr_tiles                                  =   00000000 G
+    ___bank_map_test                                            =   00000000 G
+    ___bank_stereomadness_screen0                               =   00000000 G
+    ___bank_stereomadness_screen3                               =   00000000 G
+    ___bank_test                                                =   00000000 G
+    ___bank_tiles_test                                          =   00000000 G
+    ___bank_tileset                                             =   00000000 G
+  0 ___func_famidash_chr_tiles                                      0000042A GR
+  0 ___func_map_test                                                00000185 GR
+  0 ___func_stereomadness_screen0                                   0000142A GR
+  0 ___func_stereomadness_screen3                                   00001484 GR
+  0 ___func_test                                                    000001F9 GR
+  0 ___func_tiles_test                                              00000000 GR
+  0 ___func_tileset                                                 00000224 GR
+    ___size_famidash_chr_tiles                                  =   00001000 G
+    ___size_map_test                                            =   00000074 G
+    ___size_stereomadness_screen0                               =   0000005A G
+    ___size_stereomadness_screen3                               =   0000005A G
+    ___size_test                                                =   0000002B G
+    ___size_tiles_test                                          =   00000185 G
+    ___size_tileset                                             =   00000206 G
+  0 __str_0                                                         0000151F R
+  0 __str_1                                                         00001528 R
+  0 __str_2                                                         0000152F R
+  0 __str_3                                                         00001538 R
+  0 _famidash_chr_tiles                                             0000042A GR
+  0 _game_levels                                                    00001516 GR
+  0 _level_0                                                        000014DE GR
+  0 _level_1                                                        000014EC GR
+  0 _level_2                                                        000014FA GR
+  0 _level_3                                                        00001508 GR
+  0 _map_test                                                       00000185 GR
+  0 _stereomadness_screen0                                          0000142A GR
+  0 _stereomadness_screen3                                          00001484 GR
+  0 _test                                                           000001F9 GR
+  0 _tiles_test                                                     00000000 GR
+  0 _tileset                                                        00000224 GR
+    b___func_famidash_chr_tiles                                 =   00000000 L
+    b___func_map_test                                           =   00000000 L
+    b___func_stereomadness_screen0                              =   00000000 L
+    b___func_stereomadness_screen3                              =   00000000 L
+    b___func_test                                               =   00000000 L
+    b___func_tiles_test                                         =   00000000 L
+    b___func_tileset                                            =   00000000 L
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [32-Bits]
+
+Area Table
+
+   0 _CODE                                      size     1545   flags    0
+   1 _HRAM                                      size        0   flags    0
+   2 _DATA                                      size        0   flags    0
+   3 _INITIALIZED                               size        0   flags    0
+   4 _DABS                                      size        0   flags    8
+   5 _HOME                                      size        0   flags    0
+   6 _GSINIT                                    size        0   flags    0
+   7 _GSFINAL                                   size        0   flags    0
+   8 _INITIALIZER                               size        0   flags    0
+   9 _CABS                                      size        0   flags    8
+

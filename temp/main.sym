@@ -1,0 +1,76 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 1
+Hexadecimal [32-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =   00002710 L
+    .__.ABS.                                                    =   00000000 G
+    .__.CPU.                                                    =   00000000 L
+    .__.H$L.                                                    =   00000000 L
+    _LCDC_REG                                                       ******** GX
+    _MAX_LEVELS                                                     ******** GX
+    _NR50_REG                                                       ******** GX
+    _NR51_REG                                                       ******** GX
+    _NR52_REG                                                       ******** GX
+    _TAC_REG                                                        ******** GX
+    _TMA_REG                                                        ******** GX
+  0 ___str_1                                                        000007D8 R
+  0 ___str_2                                                        000007ED R
+  0 ___str_3                                                        000007F2 R
+    __mulint                                                        ******** GX
+  8 __xinit__music_ready                                            00000000 R
+  8 __xinit__redraw                                                 00000002 R
+  8 __xinit__selected                                               00000001 R
+    _add_TIM                                                        ******** GX
+  2 _buffer                                                         00000000 R
+    _display_off                                                    ******** GX
+  0 _draw_menu                                                      00000756 GR
+  0 _draw_metatile_map                                              00000619 GR
+  0 _famidash_metatile_collision                                    00000508 GR
+  0 _famidash_metatile_palettes                                     00000408 GR
+    _fill_bkg_rect                                                  ******** GX
+    _font_init                                                      ******** GX
+    _font_load                                                      ******** GX
+    _font_min                                                       ******** GX
+    _font_set                                                       ******** GX
+    _game_levels                                                    ******** GX
+    _gotoxy                                                         ******** GX
+    _hUGE_dosound                                                   ******** GX
+    _hUGE_init                                                      ******** GX
+    _joypad                                                         ******** GX
+  0 _load_bkg_tileset                                               00000726 GR
+  0 _load_level                                                     000007F7 GR
+  0 _main                                                           00000912 GR
+  0 _metatiles                                                      00000008 GR
+  3 _music_ready                                                    00000000 GR
+  0 _play_music_safe                                                00000000 GR
+    _printf                                                         ******** GX
+    _puts                                                           ******** GX
+  3 _redraw                                                         00000002 GR
+  3 _selected                                                       00000001 GR
+    _set_bkg_data                                                   ******** GX
+    _set_bkg_tiles                                                  ******** GX
+    _set_interrupts                                                 ******** GX
+  0 _setup_menu_font                                                00000608 GR
+    _song_stereoma                                                  ******** GX
+    _wait_vbl_done                                                  ******** GX
+    _waitpadup                                                      ******** GX
+    _zx0_decompress                                                 ******** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [32-Bits]
+
+Area Table
+
+   0 _CODE                                      size      9BC   flags    0
+   1 _HRAM                                      size        0   flags    0
+   2 _DATA                                      size     1000   flags    0
+   3 _INITIALIZED                               size        3   flags    0
+   4 _DABS                                      size        0   flags    8
+   5 _HOME                                      size        0   flags    0
+   6 _GSINIT                                    size        0   flags    0
+   7 _GSFINAL                                   size        0   flags    0
+   8 _INITIALIZER                               size        3   flags    0
+   9 _CABS                                      size        0   flags    8
+

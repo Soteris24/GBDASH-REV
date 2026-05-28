@@ -1,0 +1,327 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler
+                                      3 ; Version 4.5.1 #15267 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module assets
+                                      6 	
+                                      7 ;--------------------------------------------------------
+                                      8 ; Public variables in this module
+                                      9 ;--------------------------------------------------------
+                                     10 	.globl _MAX_LEVELS
+                                     11 	.globl _game_levels
+                                     12 	.globl _level_3
+                                     13 	.globl _level_2
+                                     14 	.globl _level_1
+                                     15 	.globl _level_0
+                                     16 	.globl b___func_stereomadness_screen3
+                                     17 	.globl ___func_stereomadness_screen3
+                                     18 	.globl b___func_stereomadness_screen0
+                                     19 	.globl ___func_stereomadness_screen0
+                                     20 	.globl b___func_famidash_chr_tiles
+                                     21 	.globl ___func_famidash_chr_tiles
+                                     22 	.globl b___func_tileset
+                                     23 	.globl ___func_tileset
+                                     24 	.globl b___func_test
+                                     25 	.globl ___func_test
+                                     26 	.globl b___func_map_test
+                                     27 	.globl ___func_map_test
+                                     28 	.globl b___func_tiles_test
+                                     29 	.globl ___func_tiles_test
+                                     30 ;--------------------------------------------------------
+                                     31 ; special function registers
+                                     32 ;--------------------------------------------------------
+                                     33 	.area _HRAM
+                                     34 ;--------------------------------------------------------
+                                     35 ; ram data
+                                     36 ;--------------------------------------------------------
+                                     37 	.area _DATA
+                                     38 ;--------------------------------------------------------
+                                     39 ; ram data
+                                     40 ;--------------------------------------------------------
+                                     41 	.area _INITIALIZED
+                                     42 ;--------------------------------------------------------
+                                     43 ; absolute external ram data
+                                     44 ;--------------------------------------------------------
+                                     45 	.area _DABS (ABS)
+                                     46 ;--------------------------------------------------------
+                                     47 ; global & static initialisations
+                                     48 ;--------------------------------------------------------
+                                     49 	.area _HOME
+                                     50 	.area _GSINIT
+                                     51 	.area _GSFINAL
+                                     52 	.area _GSINIT
+                                     53 ;--------------------------------------------------------
+                                     54 ; Home
+                                     55 ;--------------------------------------------------------
+                                     56 	.area _HOME
+                                     57 	.area _HOME
+                                     58 ;--------------------------------------------------------
+                                     59 ; code
+                                     60 ;--------------------------------------------------------
+                                     61 	.area _CODE
+                                     62 ;src/assets.c:5: INCBIN(tiles_test, "levels/level_data/test_tiles.zx0")
+                                     63 ;	---------------------------------
+                                     64 ; Function __func_tiles_test
+                                     65 ; ---------------------------------
+                         00000000    66 	b___func_tiles_test	= 0
+    00000000                         67 ___func_tiles_test::
+    00000000                         68 _tiles_test::
+    00000000                         69 1$:
+    00000000 3D 00 FF FC 3D FE 1B    70 	.incbin "levels/level_data/test_tiles.zx0" 
+             0C 8A F4 01 AA 07 1F
+             B8 7F A0 2E FC 80 12
+             EA F8 D4 FE 3D 7C 29
+             80 BA 0E 88 AF 1D 11
+             75 F9 FC A8 2E FE 00
+             5F 62 7E B5 FC 69 FE
+             3A A1 C0 A0 F0 A2 01
+             94 FF 93 7F 80 1F E0
+             0C F3 86 80 3C E0 1F
+             60 78 A0 5B 0F FA 69
+             61 FD E0 29 1F 73 E2
+             5F 11 DE 0C 22 79 C6
+             63 80 7F E1 FD E0 8F
+             03 FC 65 F8 59 B6 20
+             0C F3 3F C0 38 A8 78
+             3B FF F8 07 65 B5 3E
+             1F B8 FD A5 8D D8 60
+             E7 FC
+    00000185                         71 2$:
+                         00000185    72 	___size_tiles_test = (2$-1$) 
+                                     73 	.globl ___size_tiles_test 
+                                     74 	.local b___func_tiles_test 
+                         00000000    75 	___bank_tiles_test = b___func_tiles_test 
+                                     76 	.globl ___bank_tiles_test 
+                                     77 ;src/assets.c:6: INCBIN(map_test, "levels/level_data/test_map.zx0")
+                                     78 ;	---------------------------------
+                                     79 ; Function __func_map_test
+                                     80 ; ---------------------------------
+                         00000000    81 	b___func_map_test	= 0
+    00000185                         82 ___func_map_test::
+    00000185                         83 _map_test::
+    00000185                         84 1$:
+    00000185 94 00 56 90 01 B8 02    85 	.incbin "levels/level_data/test_map.zx0" 
+             EA 60 86 03 04 05 06
+             38 07 08 F0 BB 09 FF
+             0A A1 A2 EB 0B 0C 0D
+             0E 0F EC 10 E8 E1 FF
+             11 9A 12 13 00 12 14
+             15 16 00 17 18 19 17
+             1A 11 59 E8 1B 1C 1D
+             F4 2F 1E 1F 20 21 FE
+             02 81 22 61 06 23 24
+             25 26 27 01 28 29 2A
+             2B 2C 2D 2E 2F 30 31
+             32 33 34 01 35 36 37
+             38 39 3A 3B 3C 3D 3E
+             3F 40 41 42 3F 43 44
+             45 46 01 47 05 A0 48
+             57 55 55 80
+    000001F9                         86 2$:
+                         00000074    87 	___size_map_test = (2$-1$) 
+                                     88 	.globl ___size_map_test 
+                                     89 	.local b___func_map_test 
+                         00000000    90 	___bank_map_test = b___func_map_test 
+                                     91 	.globl ___bank_map_test 
+                                     92 ;src/assets.c:7: INCBIN(test, "levels/level_data/test.zx0")
+                                     93 ;	---------------------------------
+                                     94 ; Function __func_test
+                                     95 ; ---------------------------------
+                         00000000    96 	b___func_test	= 0
+    000001F9                         97 ___func_test::
+    000001F9                         98 _test::
+    000001F9                         99 1$:
+    000001F9 DB 01 02 03 04 05 06   100 	.incbin "levels/level_data/test.zx0" 
+             07 08 09 0A 0B 0C 0D
+             0E 0F 10 11 12 13 14
+             15 16 17 18 19 1A 1B
+             1C 25 00 C1 02 02 83
+             D8 FF C1 1C 00 0F 01
+             00
+    00000224                        101 2$:
+                         0000002B   102 	___size_test = (2$-1$) 
+                                    103 	.globl ___size_test 
+                                    104 	.local b___func_test 
+                         00000000   105 	___bank_test = b___func_test 
+                                    106 	.globl ___bank_test 
+                                    107 ;src/assets.c:8: INCBIN(tileset, "levels/level_data/tileset.zx0")
+                                    108 ;	---------------------------------
+                                    109 ; Function __func_tileset
+                                    110 ; ---------------------------------
+                         00000000   111 	b___func_tileset	= 0
+    00000224                        112 ___func_tileset::
+    00000224                        113 _tileset::
+    00000224                        114 1$:
+    00000224 95 00 AA 01 03 6A 07   115 	.incbin "levels/level_data/tileset.zx0" 
+             06 06 07 0A 0F 0A 0F
+             10 1F 80 A6 C0 A0 E0
+             E4 A0 E0 B0 F0 FD 89
+             08 F8 10 1F 35 2A 3A
+             55 6A 7F 40 D5 80 FF
+             FF E3 DD 54 AC 93 FD
+             56 AA FE 02 55 01 A7
+             FF FF 8E D3 AA 80 C5
+             7B 6A 55 2A AE F8 81
+             BD 5D E7 AB 01 C5 AA
+             56 AC BE AE 80 38 0D
+             0F FD FF 05 07 3D 30
+             E3 25 81 50 F0 8F FD
+             60 E0 FF FD 30 25 DE
+             F4 01 4E 1E 1F 70 7F
+             FE FF B1 07 19 19 7D
+             61 89 F1 7D 81 09 89
+             F8 3F
+    0000042A                        116 2$:
+                         00000206   117 	___size_tileset = (2$-1$) 
+                                    118 	.globl ___size_tileset 
+                                    119 	.local b___func_tileset 
+                         00000000   120 	___bank_tileset = b___func_tileset 
+                                    121 	.globl ___bank_tileset 
+                                    122 ;src/assets.c:9: INCBIN(famidash_chr_tiles, "levels/famidash/famidash_chr_tiles.bin")
+                                    123 ;	---------------------------------
+                                    124 ; Function __func_famidash_chr_tiles
+                                    125 ; ---------------------------------
+                         00000000   126 	b___func_famidash_chr_tiles	= 0
+    0000042A                        127 ___func_famidash_chr_tiles::
+    0000042A                        128 _famidash_chr_tiles::
+    0000042A                        129 1$:
+    0000042A 00 00 00 00 00 00 00   130 	.incbin "levels/famidash/famidash_chr_tiles.bin" 
+             00 00 00 00 00 00 00
+             00 00 00 00 FF FF 7F
+             7F 7F 7F 7F 7F 3F 3F
+             1F 1F 0E 0E 00 00 7F
+             7F 3F 3F 1F 1F 0F 0F
+             07 07 03 03 00 00 00
+             00 FF FF FF FF FF FF
+             FF FF FF FF 1F 1F 0E
+             0E 00 00 FE FE FC FC
+             F8 F8 F0 F0 C0 C0 00
+             00 00 00 00 7E 2A 7E
+             3C 3C 3C 3C 18 18 18
+             18 00 00 00 00 FF FF
+             FF FF 5B 5B 12 12 10
+             10 00 00 00 00 00 00
+             FF FF FF FF EE EE E4
+             E4 40 40 40 40 00 00
+             00 00
+    0000142A                        131 2$:
+                         00001000   132 	___size_famidash_chr_tiles = (2$-1$) 
+                                    133 	.globl ___size_famidash_chr_tiles 
+                                    134 	.local b___func_famidash_chr_tiles 
+                         00000000   135 	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
+                                    136 	.globl ___bank_famidash_chr_tiles 
+                                    137 ;src/assets.c:10: INCBIN(stereomadness_screen0, "levels/level_data/stereomadness_screen0.bin")
+                                    138 ;	---------------------------------
+                                    139 ; Function __func_stereomadness_screen0
+                                    140 ; ---------------------------------
+                         00000000   141 	b___func_stereomadness_screen0	= 0
+    0000142A                        142 ___func_stereomadness_screen0::
+    0000142A                        143 _stereomadness_screen0::
+    0000142A                        144 1$:
+    0000142A 00 00 00 00 00 00 00   145 	.incbin "levels/level_data/stereomadness_screen0.bin" 
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00
+    00001484                        146 2$:
+                         0000005A   147 	___size_stereomadness_screen0 = (2$-1$) 
+                                    148 	.globl ___size_stereomadness_screen0 
+                                    149 	.local b___func_stereomadness_screen0 
+                         00000000   150 	___bank_stereomadness_screen0 = b___func_stereomadness_screen0 
+                                    151 	.globl ___bank_stereomadness_screen0 
+                                    152 ;src/assets.c:11: INCBIN(stereomadness_screen3, "levels/level_data/stereomadness_screen3.bin")
+                                    153 ;	---------------------------------
+                                    154 ; Function __func_stereomadness_screen3
+                                    155 ; ---------------------------------
+                         00000000   156 	b___func_stereomadness_screen3	= 0
+    00001484                        157 ___func_stereomadness_screen3::
+    00001484                        158 _stereomadness_screen3::
+    00001484                        159 1$:
+    00001484 00 00 00 00 00 00 00   160 	.incbin "levels/level_data/stereomadness_screen3.bin" 
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 00 00
+             00 00 00 00 00 12 11
+             00 00 00 00 00 00
+    000014DE                        161 2$:
+                         0000005A   162 	___size_stereomadness_screen3 = (2$-1$) 
+                                    163 	.globl ___size_stereomadness_screen3 
+                                    164 	.local b___func_stereomadness_screen3 
+                         00000000   165 	___bank_stereomadness_screen3 = b___func_stereomadness_screen3 
+                                    166 	.globl ___bank_stereomadness_screen3 
+                                    167 	.area _CODE
+    000014DE                        168 _level_0:
+    000014DEr1Fr15                  169 	.dw __str_0
+    000014E0r00r00                  170 	.dw _tiles_test
+    000014E2r85r01                  171 	.dw _map_test
+    000014E4 49 00                  172 	.dw #0x0049
+    000014E6 0A 00                  173 	.dw #0x000a
+    000014E8 09 00                  174 	.dw #0x0009
+    000014EA 01                     175 	.db #0x01	; 1
+    000014EB 01                     176 	.db #0x01	; 1
+    000014EC                        177 _level_1:
+    000014ECr28r15                  178 	.dw __str_1
+    000014EEr24r02                  179 	.dw _tileset
+    000014F0rF9r01                  180 	.dw _test
+    000014F2 40 00                  181 	.dw #0x0040
+    000014F4 0A 00                  182 	.dw #0x000a
+    000014F6 09 00                  183 	.dw #0x0009
+    000014F8 01                     184 	.db #0x01	; 1
+    000014F9 01                     185 	.db #0x01	; 1
+    000014FA                        186 _level_2:
+    000014FAr2Fr15                  187 	.dw __str_2
+    000014FCr2Ar04                  188 	.dw _famidash_chr_tiles
+    000014FEr2Ar14                  189 	.dw _stereomadness_screen0
+    00001500 00 01                  190 	.dw #0x0100
+    00001502 0A 00                  191 	.dw #0x000a
+    00001504 09 00                  192 	.dw #0x0009
+    00001506 00                     193 	.db #0x00	; 0
+    00001507 00                     194 	.db #0x00	; 0
+    00001508                        195 _level_3:
+    00001508r38r15                  196 	.dw __str_3
+    0000150Ar2Ar04                  197 	.dw _famidash_chr_tiles
+    0000150Cr84r14                  198 	.dw _stereomadness_screen3
+    0000150E 00 01                  199 	.dw #0x0100
+    00001510 0A 00                  200 	.dw #0x000a
+    00001512 09 00                  201 	.dw #0x0009
+    00001514 00                     202 	.db #0x00	; 0
+    00001515 00                     203 	.db #0x00	; 0
+    00001516                        204 _game_levels:
+    00001516rDEr14                  205 	.dw _level_0
+    00001518rECr14                  206 	.dw _level_1
+    0000151ArFAr14                  207 	.dw _level_2
+    0000151Cr08r15                  208 	.dw _level_3
+    0000151E                        209 _MAX_LEVELS:
+    0000151E 04                     210 	.db #0x04	; 4
+    0000151F                        211 __str_0:
+    0000151F 50 52 55 45 42 41 20   212 	.ascii "PRUEBA 1"
+             31
+    00001527 00                     213 	.db 0x00
+    00001528                        214 __str_1:
+    00001528 54 45 53 54 30 30      215 	.ascii "TEST00"
+    0000152E 00                     216 	.db 0x00
+    0000152F                        217 __str_2:
+    0000152F 53 4D 20 53 54 41 52   218 	.ascii "SM START"
+             54
+    00001537 00                     219 	.db 0x00
+    00001538                        220 __str_3:
+    00001538 53 4D 20 4F 42 53 54   221 	.ascii "SM OBSTACLES"
+             41 43 4C 45 53
+    00001544 00                     222 	.db 0x00
+                                    223 	.area _INITIALIZER
+                                    224 	.area _CABS (ABS)

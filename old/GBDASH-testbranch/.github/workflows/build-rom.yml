@@ -1,0 +1,70 @@
+name: Build ROM and Music
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'makefile'
+      - 'music/**'
+      - 'processers/**'
+      - '*'
+      - '.github/**'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'makefile'
+      - 'music/**'
+      - 'processers/**'
+      - '*'
+      - '.github/**'
+
+jobs:
+  process_music:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Make converter tools executable
+        run: |
+          chmod +x processers/FUR/furnace
+          chmod +x processers/LSDJ/lsdj2txt
+
+      - name: Process Music Files
+        run: |
+          python processtotxt.py
+          python TXTtoJSON.py
+
+      - name: Upload Processed Music
+        uses: actions/upload-artifact@v4
+        with:
+          name: Processed Music
+          path: music/
+
+  build_rom:
+    needs: process_music
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Remove old music folder
+        run: Remove-Item -Recurse -Force music
+        shell: pwsh
+
+      - name: Download processed music
+        uses: actions/download-artifact@v4
+        with:
+          name: Processed Music
+          path: music
+
+      - name: Compile GameBoy ROM
+        run: .\build.bat
+
+      - name: Upload GameBoy ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: ROM
+          path: build/

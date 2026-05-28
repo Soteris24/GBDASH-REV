@@ -1,0 +1,13 @@
+#ifndef TEMPLATE_CHECK_H
+#define TEMPLATE_CHECK_H
+
+#include <stdint.h>
+
+#define TEMPLATE_CHECK_WIDTH 256
+#define TEMPLATE_CHECK_HEIGHT 27
+#define TEMPLATE_CHECK_TILE_WIDTH (TEMPLATE_CHECK_WIDTH * 2)
+#define TEMPLATE_CHECK_TILE_HEIGHT (TEMPLATE_CHECK_HEIGHT * 2)
+
+extern const uint8_t level_map[];
+
+#endif /* TEMPLATE_CHECK_H */
