@@ -14,8 +14,8 @@
                                      14 	.globl _level_2
                                      15 	.globl _level_1
                                      16 	.globl _level_0
-                                     17 	.globl b___func_stereomadness_9high
-                                     18 	.globl ___func_stereomadness_9high
+                                     17 	.globl b___func_stereomadness_16high
+                                     18 	.globl ___func_stereomadness_16high
                                      19 	.globl b___func_stereomadness_screen3
                                      20 	.globl ___func_stereomadness_screen3
                                      21 	.globl b___func_stereomadness_screen0
@@ -62,7 +62,7 @@
                                      62 ; code
                                      63 ;--------------------------------------------------------
                                      64 	.area _CODE
-                                     65 ;src/assets.c:5: INCBIN(tiles_test,            "levels/level_data/test_tiles.zx0")
+                                     65 ;src/assets.c:4: INCBIN(tiles_test,            "levels/level_data/test_tiles.zx0")
                                      66 ;	---------------------------------
                                      67 ; Function __func_tiles_test
                                      68 ; ---------------------------------
@@ -95,7 +95,7 @@
                                      77 	.local b___func_tiles_test 
                          00000000    78 	___bank_tiles_test = b___func_tiles_test 
                                      79 	.globl ___bank_tiles_test 
-                                     80 ;src/assets.c:6: INCBIN(map_test,              "levels/level_data/test_map.zx0")
+                                     80 ;src/assets.c:5: INCBIN(map_test,              "levels/level_data/test_map.zx0")
                                      81 ;	---------------------------------
                                      82 ; Function __func_map_test
                                      83 ; ---------------------------------
@@ -126,7 +126,7 @@
                                      92 	.local b___func_map_test 
                          00000000    93 	___bank_map_test = b___func_map_test 
                                      94 	.globl ___bank_map_test 
-                                     95 ;src/assets.c:7: INCBIN(test,                  "levels/level_data/test.zx0")
+                                     95 ;src/assets.c:6: INCBIN(test,                  "levels/level_data/test.zx0")
                                      96 ;	---------------------------------
                                      97 ; Function __func_test
                                      98 ; ---------------------------------
@@ -147,7 +147,7 @@
                                     107 	.local b___func_test 
                          00000000   108 	___bank_test = b___func_test 
                                     109 	.globl ___bank_test 
-                                    110 ;src/assets.c:8: INCBIN(tileset,               "levels/level_data/tileset.zx0")
+                                    110 ;src/assets.c:7: INCBIN(tileset,               "levels/level_data/tileset.zx0")
                                     111 ;	---------------------------------
                                     112 ; Function __func_tileset
                                     113 ; ---------------------------------
@@ -180,7 +180,7 @@
                                     122 	.local b___func_tileset 
                          00000000   123 	___bank_tileset = b___func_tileset 
                                     124 	.globl ___bank_tileset 
-                                    125 ;src/assets.c:9: INCBIN(famidash_chr_tiles,    "levels/famidash/famidash_chr_tiles.bin")
+                                    125 ;src/assets.c:8: INCBIN(famidash_chr_tiles,    "levels/famidash/famidash_chr_tiles.bin")
                                     126 ;	---------------------------------
                                     127 ; Function __func_famidash_chr_tiles
                                     128 ; ---------------------------------
@@ -213,7 +213,7 @@
                                     137 	.local b___func_famidash_chr_tiles 
                          00000000   138 	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
                                     139 	.globl ___bank_famidash_chr_tiles 
-                                    140 ;src/assets.c:10: INCBIN(stereomadness_screen0, "levels/level_data/stereomadness_screen0.bin")
+                                    140 ;src/assets.c:9: INCBIN(stereomadness_screen0, "levels/level_data/stereomadness_screen0.bin")
                                     141 ;	---------------------------------
                                     142 ; Function __func_stereomadness_screen0
                                     143 ; ---------------------------------
@@ -240,7 +240,7 @@
                                     152 	.local b___func_stereomadness_screen0 
                          00000000   153 	___bank_stereomadness_screen0 = b___func_stereomadness_screen0 
                                     154 	.globl ___bank_stereomadness_screen0 
-                                    155 ;src/assets.c:11: INCBIN(stereomadness_screen3, "levels/level_data/stereomadness_screen3.bin")
+                                    155 ;src/assets.c:10: INCBIN(stereomadness_screen3, "levels/level_data/stereomadness_screen3.bin")
                                     156 ;	---------------------------------
                                     157 ; Function __func_stereomadness_screen3
                                     158 ; ---------------------------------
@@ -267,15 +267,15 @@
                                     167 	.local b___func_stereomadness_screen3 
                          00000000   168 	___bank_stereomadness_screen3 = b___func_stereomadness_screen3 
                                     169 	.globl ___bank_stereomadness_screen3 
-                                    170 ;src/assets.c:13: INCBIN(stereomadness_9high,   "levels/level_data/stereomadness_9high.bin")
+                                    170 ;src/assets.c:13: INCBIN(stereomadness_16high,  "levels/level_data/stereomadness_16high.bin")
                                     171 ;	---------------------------------
-                                    172 ; Function __func_stereomadness_9high
+                                    172 ; Function __func_stereomadness_16high
                                     173 ; ---------------------------------
-                         00000000   174 	b___func_stereomadness_9high	= 0
-    000014DE                        175 ___func_stereomadness_9high::
-    000014DE                        176 _stereomadness_9high::
+                         00000000   174 	b___func_stereomadness_16high	= 0
+    000014DE                        175 ___func_stereomadness_16high::
+    000014DE                        176 _stereomadness_16high::
     000014DE                        177 1$:
-    000014DE 00 00 00 00 00 00 00   178 	.incbin "levels/level_data/stereomadness_9high.bin" 
+    000014DE 00 00 00 00 00 00 00   178 	.incbin "levels/level_data/stereomadness_16high.bin" 
              00 00 00 00 00 00 00
              00 00 00 00 00 00 00
              00 00 00 00 00 00 00
@@ -294,84 +294,84 @@
              00 00 00 00 00 00 00
              00 00 00 00 00 00 00
              00 00
-    0000344C                        179 2$:
-                         00001F6E   180 	___size_stereomadness_9high = (2$-1$) 
-                                    181 	.globl ___size_stereomadness_9high 
-                                    182 	.local b___func_stereomadness_9high 
-                         00000000   183 	___bank_stereomadness_9high = b___func_stereomadness_9high 
-                                    184 	.globl ___bank_stereomadness_9high 
+    00004CBE                        179 2$:
+                         000037E0   180 	___size_stereomadness_16high = (2$-1$) 
+                                    181 	.globl ___size_stereomadness_16high 
+                                    182 	.local b___func_stereomadness_16high 
+                         00000000   183 	___bank_stereomadness_16high = b___func_stereomadness_16high 
+                                    184 	.globl ___bank_stereomadness_16high 
                                     185 	.area _CODE
-    0000344C                        186 _level_0:
-    0000344Cr9Dr34                  187 	.dw __str_0
-    0000344Er00r00                  188 	.dw _tiles_test
-    00003450r85r01                  189 	.dw _map_test
-    00003452 49 00                  190 	.dw #0x0049
-    00003454 0A 00                  191 	.dw #0x000a
-    00003456 09 00                  192 	.dw #0x0009
-    00003458 01                     193 	.db #0x01	; 1
-    00003459 01                     194 	.db #0x01	; 1
-    0000345A                        195 _level_1:
-    0000345ArA6r34                  196 	.dw __str_1
-    0000345Cr24r02                  197 	.dw _tileset
-    0000345ErF9r01                  198 	.dw _test
-    00003460 40 00                  199 	.dw #0x0040
-    00003462 0A 00                  200 	.dw #0x000a
-    00003464 09 00                  201 	.dw #0x0009
-    00003466 01                     202 	.db #0x01	; 1
-    00003467 01                     203 	.db #0x01	; 1
-    00003468                        204 _level_2:
-    00003468rADr34                  205 	.dw __str_2
-    0000346Ar2Ar04                  206 	.dw _famidash_chr_tiles
-    0000346Cr2Ar14                  207 	.dw _stereomadness_screen0
-    0000346E 00 01                  208 	.dw #0x0100
-    00003470 0A 00                  209 	.dw #0x000a
-    00003472 09 00                  210 	.dw #0x0009
-    00003474 00                     211 	.db #0x00	; 0
-    00003475 00                     212 	.db #0x00	; 0
-    00003476                        213 _level_3:
-    00003476rB6r34                  214 	.dw __str_3
-    00003478r2Ar04                  215 	.dw _famidash_chr_tiles
-    0000347Ar84r14                  216 	.dw _stereomadness_screen3
-    0000347C 00 01                  217 	.dw #0x0100
-    0000347E 0A 00                  218 	.dw #0x000a
-    00003480 09 00                  219 	.dw #0x0009
-    00003482 00                     220 	.db #0x00	; 0
-    00003483 00                     221 	.db #0x00	; 0
-    00003484                        222 _level_4:
-    00003484rC1r34                  223 	.dw __str_4
-    00003486r2Ar04                  224 	.dw _famidash_chr_tiles
-    00003488rDEr14                  225 	.dw _stereomadness_9high
-    0000348A 00 01                  226 	.dw #0x0100
-    0000348C 7E 03                  227 	.dw #0x037e
-    0000348E 09 00                  228 	.dw #0x0009
-    00003490 00                     229 	.db #0x00	; 0
-    00003491 00                     230 	.db #0x00	; 0
-    00003492                        231 _game_levels:
-    00003492r4Cr34                  232 	.dw _level_0
-    00003494r5Ar34                  233 	.dw _level_1
-    00003496r68r34                  234 	.dw _level_2
-    00003498r76r34                  235 	.dw _level_3
-    0000349Ar84r34                  236 	.dw _level_4
-    0000349C                        237 _MAX_LEVELS:
-    0000349C 05                     238 	.db #0x05	; 5
-    0000349D                        239 __str_0:
-    0000349D 50 52 55 45 42 41 20   240 	.ascii "PRUEBA 1"
+    00004CBE                        186 _level_0:
+    00004CBEr0Fr4D                  187 	.dw __str_0
+    00004CC0r00r00                  188 	.dw _tiles_test
+    00004CC2r85r01                  189 	.dw _map_test
+    00004CC4 49 00                  190 	.dw #0x0049
+    00004CC6 0A 00                  191 	.dw #0x000a
+    00004CC8 09 00                  192 	.dw #0x0009
+    00004CCA 01                     193 	.db #0x01	; 1
+    00004CCB 01                     194 	.db #0x01	; 1
+    00004CCC                        195 _level_1:
+    00004CCCr18r4D                  196 	.dw __str_1
+    00004CCEr24r02                  197 	.dw _tileset
+    00004CD0rF9r01                  198 	.dw _test
+    00004CD2 40 00                  199 	.dw #0x0040
+    00004CD4 0A 00                  200 	.dw #0x000a
+    00004CD6 09 00                  201 	.dw #0x0009
+    00004CD8 01                     202 	.db #0x01	; 1
+    00004CD9 01                     203 	.db #0x01	; 1
+    00004CDA                        204 _level_2:
+    00004CDAr1Fr4D                  205 	.dw __str_2
+    00004CDCr2Ar04                  206 	.dw _famidash_chr_tiles
+    00004CDEr2Ar14                  207 	.dw _stereomadness_screen0
+    00004CE0 00 01                  208 	.dw #0x0100
+    00004CE2 0A 00                  209 	.dw #0x000a
+    00004CE4 09 00                  210 	.dw #0x0009
+    00004CE6 00                     211 	.db #0x00	; 0
+    00004CE7 00                     212 	.db #0x00	; 0
+    00004CE8                        213 _level_3:
+    00004CE8r28r4D                  214 	.dw __str_3
+    00004CEAr2Ar04                  215 	.dw _famidash_chr_tiles
+    00004CECr84r14                  216 	.dw _stereomadness_screen3
+    00004CEE 00 01                  217 	.dw #0x0100
+    00004CF0 0A 00                  218 	.dw #0x000a
+    00004CF2 09 00                  219 	.dw #0x0009
+    00004CF4 00                     220 	.db #0x00	; 0
+    00004CF5 00                     221 	.db #0x00	; 0
+    00004CF6                        222 _level_4:
+    00004CF6r33r4D                  223 	.dw __str_4
+    00004CF8r2Ar04                  224 	.dw _famidash_chr_tiles
+    00004CFArDEr14                  225 	.dw _stereomadness_16high
+    00004CFC 00 01                  226 	.dw #0x0100
+    00004CFE 7E 03                  227 	.dw #0x037e
+    00004D00 10 00                  228 	.dw #0x0010
+    00004D02 00                     229 	.db #0x00	; 0
+    00004D03 00                     230 	.db #0x00	; 0
+    00004D04                        231 _game_levels:
+    00004D04rBEr4C                  232 	.dw _level_0
+    00004D06rCCr4C                  233 	.dw _level_1
+    00004D08rDAr4C                  234 	.dw _level_2
+    00004D0ArE8r4C                  235 	.dw _level_3
+    00004D0CrF6r4C                  236 	.dw _level_4
+    00004D0E                        237 _MAX_LEVELS:
+    00004D0E 05                     238 	.db #0x05	; 5
+    00004D0F                        239 __str_0:
+    00004D0F 50 52 55 45 42 41 20   240 	.ascii "PRUEBA 1"
              31
-    000034A5 00                     241 	.db 0x00
-    000034A6                        242 __str_1:
-    000034A6 54 45 53 54 30 30      243 	.ascii "TEST00"
-    000034AC 00                     244 	.db 0x00
-    000034AD                        245 __str_2:
-    000034AD 53 4D 20 53 54 41 52   246 	.ascii "SM START"
+    00004D17 00                     241 	.db 0x00
+    00004D18                        242 __str_1:
+    00004D18 54 45 53 54 30 30      243 	.ascii "TEST00"
+    00004D1E 00                     244 	.db 0x00
+    00004D1F                        245 __str_2:
+    00004D1F 53 4D 20 53 54 41 52   246 	.ascii "SM START"
              54
-    000034B5 00                     247 	.db 0x00
-    000034B6                        248 __str_3:
-    000034B6 53 4D 20 53 43 52 45   249 	.ascii "SM SCREEN3"
+    00004D27 00                     247 	.db 0x00
+    00004D28                        248 __str_3:
+    00004D28 53 4D 20 53 43 52 45   249 	.ascii "SM SCREEN3"
              45 4E 33
-    000034C0 00                     250 	.db 0x00
-    000034C1                        251 __str_4:
-    000034C1 53 54 45 52 45 4F 20   252 	.ascii "STEREO MADNESS"
+    00004D32 00                     250 	.db 0x00
+    00004D33                        251 __str_4:
+    00004D33 53 54 45 52 45 4F 20   252 	.ascii "STEREO MADNESS"
              4D 41 44 4E 45 53 53
-    000034CF 00                     253 	.db 0x00
+    00004D41 00                     253 	.db 0x00
                                     254 	.area _INITIALIZER
                                     255 	.area _CABS (ABS)

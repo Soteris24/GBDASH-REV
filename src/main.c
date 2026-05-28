@@ -8,8 +8,6 @@
 #include "hUGEDriver.h"
 #include "famidash_metatiles.c"
 
-// Buffer only for decompressing tiles/maps (max compressed tileset ~1200 bytes uncompressed)
-// Reduced from 4096 to 2048 to save precious RAM
 static uint8_t buffer[2048];
 
 uint8_t music_ready = 0;
@@ -27,9 +25,6 @@ void setup_menu_font(void) {
     font_set(font_load(font_min));
 }
 
-// -------------------------------------------------------
-// Tileset loader
-// -------------------------------------------------------
 void load_bkg_tileset(const uint8_t *tiles, uint16_t tile_count) {
     if (tile_count == 256u) {
         set_bkg_data(0,   128, tiles);
@@ -39,9 +34,6 @@ void load_bkg_tileset(const uint8_t *tiles, uint16_t tile_count) {
     }
 }
 
-// -------------------------------------------------------
-// Static full-screen metatile draw (small fixed levels)
-// -------------------------------------------------------
 void draw_metatile_map(uint16_t map_w, uint8_t cols, uint8_t rows,
                        const uint8_t *map) {
     for (uint8_t y = 0; y < rows; y++) {
@@ -54,33 +46,49 @@ void draw_metatile_map(uint16_t map_w, uint8_t cols, uint8_t rows,
 }
 
 // -------------------------------------------------------
-// Ring-buffer column draw for the scrolling loader.
-//
-// The GB background plane is 32 tiles = 16 metatile columns wide.
-// We treat it as a ring buffer: bkg_col = map_col % 16.
-// SCX is set to cam_x * 16 pixels to shift the viewport.
-// Only one column (9 metatiles) is drawn per scroll step.
+// Ring-buffer dimensions.
+// The GB background is 32x32 tiles = 16x16 metatiles.
+// We use all 16 rows and 16 columns as a 2D ring buffer.
+// Viewport is 10 cols x 9 rows (160x144px).
 // -------------------------------------------------------
-#define BKG_MT_W  16   // background width in metatiles (32 tiles / 2)
-#define VIEW_MT_W 10   // visible metatile columns on screen
-#define VIEW_MT_H  9   // visible metatile rows on screen
+#define BKG_MT_W   16   // background ring width  in metatiles
+#define BKG_MT_H   16   // background ring height in metatiles
+#define VIEW_MT_W  10   // visible columns (160px / 16px)
+#define VIEW_MT_H   9   // visible rows    (144px / 16px)
 
+// Draw one metatile column into the ring buffer at ring x = bkg_col,
+// for all map rows currently in [cam_y .. cam_y + BKG_MT_H).
 void draw_mt_column(uint8_t bkg_col, uint16_t map_col,
-                    const uint8_t *map, uint16_t map_w) {
-    uint8_t bx = bkg_col << 1;  // tile x in background (wraps naturally)
-    for (uint8_t y = 0; y < VIEW_MT_H; y++) {
-        uint8_t mt = map[(uint16_t)y * map_w + map_col];
-        uint8_t by = y << 1;
+                    const uint8_t *map, uint16_t map_w, uint16_t map_h) {
+    uint8_t bx = bkg_col << 1;
+    for (uint8_t r = 0; r < map_h && r < BKG_MT_H; r++) {
+        uint8_t mt = map[(uint16_t)r * map_w + map_col];
+        uint8_t by = (r & (BKG_MT_H - 1)) << 1;   // ring wrap on Y
         set_bkg_tiles(bx, by,     2, 1, &metatiles[mt][0]);
         set_bkg_tiles(bx, by + 1, 2, 1, &metatiles[mt][2]);
     }
 }
 
-// Fill the entire background ring on first entry
-void fill_scroll_bg(const uint8_t *map, uint16_t map_w) {
+// Draw one metatile row into the ring buffer at ring y = bkg_row.
+void draw_mt_row(uint8_t bkg_row, uint16_t map_row,
+                 uint16_t cam_x_col, uint16_t visible_cols,
+                 const uint8_t *map, uint16_t map_w) {
+    uint8_t by = bkg_row << 1;
+    for (uint16_t c = 0; c < visible_cols; c++) {
+        uint16_t mc = cam_x_col + c;
+        if (mc >= map_w) break;
+        uint8_t mt = map[(uint16_t)map_row * map_w + mc];
+        uint8_t bx = (uint8_t)((mc & (BKG_MT_W - 1)) << 1);
+        set_bkg_tiles(bx, by,     2, 1, &metatiles[mt][0]);
+        set_bkg_tiles(bx, by + 1, 2, 1, &metatiles[mt][2]);
+    }
+}
+
+// Fill the entire 16x16 ring on level entry.
+void fill_scroll_bg(const uint8_t *map, uint16_t map_w, uint16_t map_h) {
     uint16_t cols = (map_w < BKG_MT_W) ? map_w : BKG_MT_W;
     for (uint16_t c = 0; c < cols; c++) {
-        draw_mt_column((uint8_t)(c % BKG_MT_W), c, map, map_w);
+        draw_mt_column((uint8_t)(c % BKG_MT_W), c, map, map_w, map_h);
     }
 }
 
@@ -101,7 +109,7 @@ void draw_menu(void) {
 }
 
 // -------------------------------------------------------
-// Static level loader (levels 0-3, fixed 10x9 screens)
+// Static level loader (levels 0-3)
 // -------------------------------------------------------
 void load_level(uint8_t idx) {
     const Level *l = game_levels[idx];
@@ -136,37 +144,48 @@ void load_level(uint8_t idx) {
 
     waitpadup();
     while (!(joypad() & J_START)) wait_vbl_done();
-
     waitpadup();
     setup_menu_font();
     redraw = 1;
 }
 
 // -------------------------------------------------------
-// Scrolling level loader (level 4 — SM SCROLL)
+// Scrolling level loader  (level 4 — SM SCROLL)
 //
-// Uses ring-buffer column updates + SCX hardware scroll.
-// Map must be uncompressed (ROM-resident).
-// Left/Right D-Pad scrolls. Start returns to menu.
+// Left/Right: scroll horizontally (smooth, 2px/frame)
+// Up/Down:    scroll vertically   (smooth, 2px/frame)
+// Start:      return to menu
+//
+// The map is 894 cols x 16 rows (rows 11-26 of the full level).
+// The GB background ring (16x16 metatiles) holds the whole height
+// at once, so vertical scrolling needs NO column redraws — it's
+// just a free SCY register change. Only horizontal movement draws
+// new columns (one per 16px boundary crossed).
 // -------------------------------------------------------
+#define SCROLL_SPEED 2
+
 void play_level_scroll(uint8_t idx) {
     const Level *l     = game_levels[idx];
     const uint8_t *map = l->map;
     uint16_t map_w     = l->map_width;
+    uint16_t map_h     = l->map_height;   // 16
 
-    // cam_px: camera position in pixels (1 metatile = 16px)
-    uint16_t cam_px    = 0;
-    uint16_t max_px    = (map_w - VIEW_MT_W) << 4;  // (map_w - 10) * 16
+    uint16_t cam_px    = 0;               // horizontal camera, pixels
+    uint16_t cam_py    = 0;               // vertical camera, pixels
 
-    // Track which metatile column is the rightmost loaded in the ring
-    uint16_t loaded_right = BKG_MT_W - 1;  // we pre-fill columns 0..15
+    // Horizontal: max scroll so last visible column is map edge
+    uint16_t max_px    = (map_w - VIEW_MT_W) << 4;
+    // Vertical: map is 16 rows = 256px tall. Screen is 144px = 9 rows.
+    // Max cam_py so we don't scroll past the bottom of the map.
+    uint16_t max_py    = (map_h - VIEW_MT_H) << 4;  // (16-9)*16 = 112
+
+    // Track rightmost map column loaded into ring so we don't double-draw
+    uint16_t loaded_right = BKG_MT_W - 1;
 
     DISPLAY_OFF;
-
     load_bkg_tileset(l->tiles, l->tile_count);
     move_bkg(0, 0);
-    fill_scroll_bg(map, map_w);
-
+    fill_scroll_bg(map, map_w, map_h);
     SHOW_BKG;
     DISPLAY_ON;
 
@@ -178,42 +197,56 @@ void play_level_scroll(uint8_t idx) {
         uint8_t joy = joypad();
         if (joy & J_START) break;
 
-        // Scroll speed: 2 pixels per frame while held
-#define SCROLL_SPEED 2
-
+        // --- Horizontal scroll ---
         if (joy & J_RIGHT) {
             if (cam_px < max_px) {
-                uint16_t prev_col = cam_px >> 4;       // metatile col before move
+                uint16_t prev_col = cam_px >> 4;
                 cam_px += SCROLL_SPEED;
                 if (cam_px > max_px) cam_px = max_px;
-                uint16_t curr_col = cam_px >> 4;       // metatile col after move
+                uint16_t curr_col = cam_px >> 4;
 
-                // Did we cross into a new metatile column? Load the one just
-                // off the right edge of the viewport before it appears.
                 if (curr_col != prev_col) {
                     uint16_t need_col = curr_col + VIEW_MT_W;
                     if (need_col > loaded_right && need_col < map_w) {
                         loaded_right = need_col;
                         draw_mt_column((uint8_t)(need_col % BKG_MT_W),
-                                       need_col, map, map_w);
+                                       need_col, map, map_w, map_h);
                     }
                 }
-
-                move_bkg((uint8_t)cam_px, 0);
             }
         } else if (joy & J_LEFT) {
             if (cam_px > 0) {
                 if (cam_px < SCROLL_SPEED) cam_px = 0;
                 else cam_px -= SCROLL_SPEED;
-
-                // No ring-buffer work needed scrolling left —
-                // those columns were already drawn on the way right.
-                move_bkg((uint8_t)cam_px, 0);
+                // Left scroll: columns were already loaded on the way right.
+                // Only need to redraw if scrolling back past the ring boundary.
+                uint16_t curr_col = cam_px >> 4;
+                if (curr_col < loaded_right && loaded_right > BKG_MT_W) {
+                    draw_mt_column((uint8_t)(curr_col % BKG_MT_W),
+                                   curr_col, map, map_w, map_h);
+                }
             }
         }
+
+        // --- Vertical scroll ---
+        // The full 16-row map is already in the ring — SCY is free!
+        if (joy & J_DOWN) {
+            if (cam_py < max_py) {
+                cam_py += SCROLL_SPEED;
+                if (cam_py > max_py) cam_py = max_py;
+            }
+        } else if (joy & J_UP) {
+            if (cam_py > 0) {
+                if (cam_py < SCROLL_SPEED) cam_py = 0;
+                else cam_py -= SCROLL_SPEED;
+            }
+        }
+
+        // SCX wraps at 256 naturally (ring is 16 metatiles = 256px wide)
+        // SCY wraps at 256 naturally (ring is 16 metatiles = 256px tall)
+        move_bkg((uint8_t)cam_px, (uint8_t)cam_py);
     }
 
-    // Reset hardware scroll before returning to menu
     move_bkg(0, 0);
     waitpadup();
     setup_menu_font();
@@ -225,7 +258,6 @@ void play_level_scroll(uint8_t idx) {
 // -------------------------------------------------------
 void main(void) {
     music_ready = 0;
-
     NR52_REG = 0x80;
     NR51_REG = 0xFF;
     NR50_REG = 0x77;
@@ -244,7 +276,6 @@ void main(void) {
 
     while (1) {
         if (redraw) draw_menu();
-
         uint8_t joy = joypad();
 
         if (joy & J_UP) {

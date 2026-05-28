@@ -14,8 +14,8 @@
 	.globl _level_2
 	.globl _level_1
 	.globl _level_0
-	.globl b___func_stereomadness_9high
-	.globl ___func_stereomadness_9high
+	.globl b___func_stereomadness_16high
+	.globl ___func_stereomadness_16high
 	.globl b___func_stereomadness_screen3
 	.globl ___func_stereomadness_screen3
 	.globl b___func_stereomadness_screen0
@@ -62,7 +62,7 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;src/assets.c:5: INCBIN(tiles_test,            "levels/level_data/test_tiles.zx0")
+;src/assets.c:4: INCBIN(tiles_test,            "levels/level_data/test_tiles.zx0")
 ;	---------------------------------
 ; Function __func_tiles_test
 ; ---------------------------------
@@ -77,7 +77,7 @@ _tiles_test::
 	.local b___func_tiles_test 
 	___bank_tiles_test = b___func_tiles_test 
 	.globl ___bank_tiles_test 
-;src/assets.c:6: INCBIN(map_test,              "levels/level_data/test_map.zx0")
+;src/assets.c:5: INCBIN(map_test,              "levels/level_data/test_map.zx0")
 ;	---------------------------------
 ; Function __func_map_test
 ; ---------------------------------
@@ -92,7 +92,7 @@ _map_test::
 	.local b___func_map_test 
 	___bank_map_test = b___func_map_test 
 	.globl ___bank_map_test 
-;src/assets.c:7: INCBIN(test,                  "levels/level_data/test.zx0")
+;src/assets.c:6: INCBIN(test,                  "levels/level_data/test.zx0")
 ;	---------------------------------
 ; Function __func_test
 ; ---------------------------------
@@ -107,7 +107,7 @@ _test::
 	.local b___func_test 
 	___bank_test = b___func_test 
 	.globl ___bank_test 
-;src/assets.c:8: INCBIN(tileset,               "levels/level_data/tileset.zx0")
+;src/assets.c:7: INCBIN(tileset,               "levels/level_data/tileset.zx0")
 ;	---------------------------------
 ; Function __func_tileset
 ; ---------------------------------
@@ -122,7 +122,7 @@ _tileset::
 	.local b___func_tileset 
 	___bank_tileset = b___func_tileset 
 	.globl ___bank_tileset 
-;src/assets.c:9: INCBIN(famidash_chr_tiles,    "levels/famidash/famidash_chr_tiles.bin")
+;src/assets.c:8: INCBIN(famidash_chr_tiles,    "levels/famidash/famidash_chr_tiles.bin")
 ;	---------------------------------
 ; Function __func_famidash_chr_tiles
 ; ---------------------------------
@@ -137,7 +137,7 @@ _famidash_chr_tiles::
 	.local b___func_famidash_chr_tiles 
 	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
 	.globl ___bank_famidash_chr_tiles 
-;src/assets.c:10: INCBIN(stereomadness_screen0, "levels/level_data/stereomadness_screen0.bin")
+;src/assets.c:9: INCBIN(stereomadness_screen0, "levels/level_data/stereomadness_screen0.bin")
 ;	---------------------------------
 ; Function __func_stereomadness_screen0
 ; ---------------------------------
@@ -152,7 +152,7 @@ _stereomadness_screen0::
 	.local b___func_stereomadness_screen0 
 	___bank_stereomadness_screen0 = b___func_stereomadness_screen0 
 	.globl ___bank_stereomadness_screen0 
-;src/assets.c:11: INCBIN(stereomadness_screen3, "levels/level_data/stereomadness_screen3.bin")
+;src/assets.c:10: INCBIN(stereomadness_screen3, "levels/level_data/stereomadness_screen3.bin")
 ;	---------------------------------
 ; Function __func_stereomadness_screen3
 ; ---------------------------------
@@ -167,21 +167,21 @@ _stereomadness_screen3::
 	.local b___func_stereomadness_screen3 
 	___bank_stereomadness_screen3 = b___func_stereomadness_screen3 
 	.globl ___bank_stereomadness_screen3 
-;src/assets.c:13: INCBIN(stereomadness_9high,   "levels/level_data/stereomadness_9high.bin")
+;src/assets.c:13: INCBIN(stereomadness_16high,  "levels/level_data/stereomadness_16high.bin")
 ;	---------------------------------
-; Function __func_stereomadness_9high
+; Function __func_stereomadness_16high
 ; ---------------------------------
-	b___func_stereomadness_9high	= 0
-___func_stereomadness_9high::
-_stereomadness_9high::
+	b___func_stereomadness_16high	= 0
+___func_stereomadness_16high::
+_stereomadness_16high::
 1$:
-	.incbin "levels/level_data/stereomadness_9high.bin" 
+	.incbin "levels/level_data/stereomadness_16high.bin" 
 2$:
-	___size_stereomadness_9high = (2$-1$) 
-	.globl ___size_stereomadness_9high 
-	.local b___func_stereomadness_9high 
-	___bank_stereomadness_9high = b___func_stereomadness_9high 
-	.globl ___bank_stereomadness_9high 
+	___size_stereomadness_16high = (2$-1$) 
+	.globl ___size_stereomadness_16high 
+	.local b___func_stereomadness_16high 
+	___bank_stereomadness_16high = b___func_stereomadness_16high 
+	.globl ___bank_stereomadness_16high 
 	.area _CODE
 _level_0:
 	.dw __str_0
@@ -222,10 +222,10 @@ _level_3:
 _level_4:
 	.dw __str_4
 	.dw _famidash_chr_tiles
-	.dw _stereomadness_9high
+	.dw _stereomadness_16high
 	.dw #0x0100
 	.dw #0x037e
-	.dw #0x0009
+	.dw #0x0010
 	.db #0x00	; 0
 	.db #0x00	; 0
 _game_levels:

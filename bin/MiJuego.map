@@ -35,11 +35,11 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
      0000005A  ___size_s |    0000005A  ___size_s |    00000060  l__HEADER
      00000074  ___size_m |    000000AB  l__HEADER |    00000185  ___size_t
      00000200  s__CODE   |    00000206  ___size_t |    0000089D  l__DATA  
-     00000AE2  l__HOME   |    00001000  ___size_f |    00001F6E  ___size_s
-     00002000  _rROMB0   |    00003000  _rROMB1   |    00004000  _rMBC7_SR
-     00004000  _rRAMB    |    00005383  l__CODE   |    00005583  s__HOME  
-     00006065  s__BASE   |    00006065  s__CODE_0 |    00006065  s__INITIA
-     00006065  s__LIT    |    0000606E  s__GSINIT |    0000607A  s__GSFINA
+     00000AE2  l__HOME   |    00001000  ___size_f |    00002000  _rROMB0  
+     00003000  _rROMB1   |    000037E0  ___size_s |    00004000  _rMBC7_SR
+     00004000  _rRAMB    |    00006DE1  l__CODE   |    00006FE1  s__HOME  
+     00007AC3  s__BASE   |    00007AC3  s__CODE_0 |    00007AC3  s__INITIA
+     00007AC3  s__LIT    |    00007ACC  s__GSINIT |    00007AD8  s__GSFINA
      00008000  __VRAM    |    00008000  __VRAM800 |    00008800  __VRAM880
      00009000  __VRAM900 |    00009800  __SCRN0   |    00009C00  __SCRN1  
      0000A000  __SRAM    |    0000A000  _rMBC7_LA |    0000A010  _rMBC7_LA
@@ -83,7 +83,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_CODE                  00000200    00005383 =       21379. bytes (REL,CON)
+_CODE                  00000200    00006DE1 =       28129. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -92,20 +92,20 @@ _CODE                  00000200    00005383 =       21379. bytes (REL,CON)
      00000424  ___func_t |    00000424  _tileset  |    0000062A  ___func_f
      0000062A  _famidash |    0000162A  ___func_s |    0000162A  _stereoma
      00001684  ___func_s |    00001684  _stereoma |    000016DE  ___func_s
-     000016DE  _stereoma |    0000364C  _level_0  |    0000365A  _level_1 
-     00003668  _level_2  |    00003676  _level_3  |    00003684  _level_4 
-     00003692  _game_lev |    0000369C  _MAX_LEVE |    000036D0  _play_mus
-     000036D8  _metatile |    00003AD8  _famidash |    00003BD8  _famidash
-     00003CD8  _setup_me |    00003CE9  _load_bkg |    00003D19  _draw_met
-     00003E26  _draw_mt_ |    00003EA3  _fill_scr |    00003EE0  _draw_men
-     00003F81  _load_lev |    0000409E  _play_lev |    0000426F  _main    
-     00004944  _song_ste |    00004959  _hUGE_ini |    0000495B  hUGE_init
-     000049B1  _hUGE_mut |    000049B3  hUGE_mute |    00004C01  _hUGE_set
-     00004C03  hUGE_set_ |    00004DC8  _hUGE_dos |    00004DC8  hUGE_doso
-     000050F4  _zx0_deco |    000050F8  dzx0_stan |    00005172  __mulsuch
-     00005175  __mulusch |    0000517E  __mulscha |    00005186  __mulint 
-     000051A5  __mulucha |    000051B7  _printf   |    000051CC  ___crlf  
-     00005207  ___printf |    00005564  _sprintf 
+     000016DE  _stereoma |    00004EBE  _level_0  |    00004ECC  _level_1 
+     00004EDA  _level_2  |    00004EE8  _level_3  |    00004EF6  _level_4 
+     00004F04  _game_lev |    00004F0E  _MAX_LEVE |    00004F42  _play_mus
+     00004F4A  _metatile |    0000534A  _famidash |    0000544A  _famidash
+     0000554A  _setup_me |    0000555B  _load_bkg |    0000558B  _draw_met
+     00005698  _draw_mt_ |    00005720  _draw_mt_ |    000057BD  _fill_scr
+     00005804  _draw_men |    000058A5  _load_lev |    000059C2  _play_lev
+     00005CCD  _main     |    000063A2  _song_ste |    000063B7  _hUGE_ini
+     000063B9  hUGE_init |    0000640F  _hUGE_mut |    00006411  hUGE_mute
+     0000665F  _hUGE_set |    00006661  hUGE_set_ |    00006826  _hUGE_dos
+     00006826  hUGE_doso |    00006B52  _zx0_deco |    00006B56  dzx0_stan
+     00006BD0  __mulsuch |    00006BD3  __mulusch |    00006BDC  __mulscha
+     00006BE4  __mulint  |    00006C03  __mulucha |    00006C15  _printf  
+     00006C2A  ___crlf   |    00006C65  ___printf |    00006FC2  _sprintf 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
 Hexadecimal  [32-Bits]
 
@@ -283,38 +283,38 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_HOME                  00005583    00000AE2 =        2786. bytes (REL,CON)
+_HOME                  00006FE1    00000AE2 =        2786. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
-     00005583  .memset_s |    0000558C  .memcpy_s |    000055A9  .display_
-     000055A9  _display_ |    000055C1  _font_loa |    000055C8  font_load
-     00005610  font_copy |    00005646  font_set  |    00005653  .put_char
-     0000566B  .out_char |    00005671  .del_char |    000056C7  _putchar 
-     000056D0  _setchar  |    000056D9  _font_loa |    000056E7  _font_set
-     000056F6  _font_ini |    00005715  .cls      |    00005715  _cls     
-     00005737  _gotoxy   |    00005742  _posx     |    00005753  _posy    
-     0000577B  .cr_curs  |    00005790  .adv_curs |    000057EC  .tmode   
-     00005809  .tmode_ou |    00005812  _set_bkg_ |    00005812  _set_win_
-     0000581A  _set_spri |    00005872  _add_TIM  |    00005875  .add_TIM 
-     0000587B  .remove_T |    0000587B  _remove_T |    00005881  _fill_bkg
-     00005893  .padup    |    00005893  _waitpadu |    000058A3  .jpad    
-     000058A3  _joypad   |    000058CB  _waitpad  |    000058CC  .wait_pad
-     000058D3  _color    |    000058D3  _set_1bpp |    000058E2  _puts    
-     00005907  .drawing_ |    00005924  _font_ibm |    00005D05  .add_LCD 
-     00005D05  _add_LCD  |    00005D0B  .remove_L |    00005D0B  _remove_L
-     00005D11  _set_tile |    00005D16  _set_bkg_ |    00005D16  _set_win_
-     00005D1E  _set_spri |    00005D4E  _font_min |    00005EF8  _set_bkg_
-     00005F0C  .fill_rec |    00005F15  .fill_rec |    00005F62  .set_xy_w
-     00005F6B  .set_xy_b |    00005F7A  .set_xy_t |    00005FBE  _uitoa   
-     00005FCD  _itoa     |    00005FDC  .itoa     |    00005FF0  .utoa    
-     00006064  ___sdcc_c
+     00006FE1  .memset_s |    00006FEA  .memcpy_s |    00007007  .display_
+     00007007  _display_ |    0000701F  _font_loa |    00007026  font_load
+     0000706E  font_copy |    000070A4  font_set  |    000070B1  .put_char
+     000070C9  .out_char |    000070CF  .del_char |    00007125  _putchar 
+     0000712E  _setchar  |    00007137  _font_loa |    00007145  _font_set
+     00007154  _font_ini |    00007173  .cls      |    00007173  _cls     
+     00007195  _gotoxy   |    000071A0  _posx     |    000071B1  _posy    
+     000071D9  .cr_curs  |    000071EE  .adv_curs |    0000724A  .tmode   
+     00007267  .tmode_ou |    00007270  _set_bkg_ |    00007270  _set_win_
+     00007278  _set_spri |    000072D0  _add_TIM  |    000072D3  .add_TIM 
+     000072D9  .remove_T |    000072D9  _remove_T |    000072DF  _fill_bkg
+     000072F1  .padup    |    000072F1  _waitpadu |    00007301  .jpad    
+     00007301  _joypad   |    00007329  _waitpad  |    0000732A  .wait_pad
+     00007331  _color    |    00007331  _set_1bpp |    00007340  _puts    
+     00007365  .drawing_ |    00007382  _font_ibm |    00007763  .add_LCD 
+     00007763  _add_LCD  |    00007769  .remove_L |    00007769  _remove_L
+     0000776F  _set_tile |    00007774  _set_bkg_ |    00007774  _set_win_
+     0000777C  _set_spri |    000077AC  _font_min |    00007956  _set_bkg_
+     0000796A  .fill_rec |    00007973  .fill_rec |    000079C0  .set_xy_w
+     000079C9  .set_xy_b |    000079D8  .set_xy_t |    00007A1C  _uitoa   
+     00007A2B  _itoa     |    00007A3A  .itoa     |    00007A4E  .utoa    
+     00007AC2  ___sdcc_c
 ASxxxx Linker V03.00/V05.40 + sdld,  page 23.
 Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_INITIALIZER           00006065    00000009 =           9. bytes (REL,CON)
+_INITIALIZER           00007AC3    00000009 =           9. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -323,17 +323,17 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_GSINIT                0000606E    0000000C =          12. bytes (REL,CON)
+_GSINIT                00007ACC    0000000C =          12. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
-     0000606E  gsinit   
+     00007ACC  gsinit   
 ASxxxx Linker V03.00/V05.40 + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-_GSFINAL               0000607A    00000001 =           1. bytes (REL,CON)
+_GSFINAL               00007AD8    00000001 =           1. bytes (REL,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    

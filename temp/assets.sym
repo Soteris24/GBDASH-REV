@@ -7,10 +7,10 @@ Symbol Table
     .__.ABS.                                                    =   00000000 G
     .__.CPU.                                                    =   00000000 L
     .__.H$L.                                                    =   00000000 L
-  0 _MAX_LEVELS                                                     0000349C GR
+  0 _MAX_LEVELS                                                     00004D0E GR
     ___bank_famidash_chr_tiles                                  =   00000000 G
     ___bank_map_test                                            =   00000000 G
-    ___bank_stereomadness_9high                                 =   00000000 G
+    ___bank_stereomadness_16high                                =   00000000 G
     ___bank_stereomadness_screen0                               =   00000000 G
     ___bank_stereomadness_screen3                               =   00000000 G
     ___bank_test                                                =   00000000 G
@@ -18,7 +18,7 @@ Symbol Table
     ___bank_tileset                                             =   00000000 G
   0 ___func_famidash_chr_tiles                                      0000042A GR
   0 ___func_map_test                                                00000185 GR
-  0 ___func_stereomadness_9high                                     000014DE GR
+  0 ___func_stereomadness_16high                                    000014DE GR
   0 ___func_stereomadness_screen0                                   0000142A GR
   0 ___func_stereomadness_screen3                                   00001484 GR
   0 ___func_test                                                    000001F9 GR
@@ -26,26 +26,26 @@ Symbol Table
   0 ___func_tileset                                                 00000224 GR
     ___size_famidash_chr_tiles                                  =   00001000 G
     ___size_map_test                                            =   00000074 G
-    ___size_stereomadness_9high                                 =   00001F6E G
+    ___size_stereomadness_16high                                =   000037E0 G
     ___size_stereomadness_screen0                               =   0000005A G
     ___size_stereomadness_screen3                               =   0000005A G
     ___size_test                                                =   0000002B G
     ___size_tiles_test                                          =   00000185 G
     ___size_tileset                                             =   00000206 G
-  0 __str_0                                                         0000349D R
-  0 __str_1                                                         000034A6 R
-  0 __str_2                                                         000034AD R
-  0 __str_3                                                         000034B6 R
-  0 __str_4                                                         000034C1 R
+  0 __str_0                                                         00004D0F R
+  0 __str_1                                                         00004D18 R
+  0 __str_2                                                         00004D1F R
+  0 __str_3                                                         00004D28 R
+  0 __str_4                                                         00004D33 R
   0 _famidash_chr_tiles                                             0000042A GR
-  0 _game_levels                                                    00003492 GR
-  0 _level_0                                                        0000344C GR
-  0 _level_1                                                        0000345A GR
-  0 _level_2                                                        00003468 GR
-  0 _level_3                                                        00003476 GR
-  0 _level_4                                                        00003484 GR
+  0 _game_levels                                                    00004D04 GR
+  0 _level_0                                                        00004CBE GR
+  0 _level_1                                                        00004CCC GR
+  0 _level_2                                                        00004CDA GR
+  0 _level_3                                                        00004CE8 GR
+  0 _level_4                                                        00004CF6 GR
   0 _map_test                                                       00000185 GR
-  0 _stereomadness_9high                                            000014DE GR
+  0 _stereomadness_16high                                           000014DE GR
   0 _stereomadness_screen0                                          0000142A GR
   0 _stereomadness_screen3                                          00001484 GR
   0 _test                                                           000001F9 GR
@@ -53,7 +53,7 @@ Symbol Table
   0 _tileset                                                        00000224 GR
     b___func_famidash_chr_tiles                                 =   00000000 L
     b___func_map_test                                           =   00000000 L
-    b___func_stereomadness_9high                                =   00000000 L
+    b___func_stereomadness_16high                               =   00000000 L
     b___func_stereomadness_screen0                              =   00000000 L
     b___func_stereomadness_screen3                              =   00000000 L
     b___func_test                                               =   00000000 L
@@ -71,7 +71,7 @@ Hexadecimal [32-Bits]
 
 Area Table
 
-   0 _CODE                                      size     34D0   flags    0
+   0 _CODE                                      size     4D42   flags    0
    1 _HRAM                                      size        0   flags    0
    2 _DATA                                      size        0   flags    0
    3 _INITIALIZED                               size        0   flags    0
