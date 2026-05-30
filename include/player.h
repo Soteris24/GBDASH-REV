@@ -12,9 +12,9 @@
 #define PLAYER_SIZE       15    // hitbox size (16px - 1 for zero-index)
 
 // Fixed-point physics (1 unit = 1/16th pixel)
-#define GRAVITY            6    // added to vel_y every frame
-#define JUMP_FORCE      -110    // vel_y on jump (negative = up)
-#define MAX_FALL_SPEED    80    // terminal velocity
+#define GRAVITY           8
+#define JUMP_FORCE       -85
+#define MAX_FALL_SPEED    80
 
 // -------------------------------------------------------
 // Player state
@@ -63,15 +63,21 @@ static inline uint8_t player_update(
 ) {
     if (p->dead) return 1;
 
+    uint8_t foot_l = col_point(p->world_x, p->world_y + PLAYER_SIZE + 1, map, map_w, map_h);
+    uint8_t foot_r = col_point(p->world_x + PLAYER_SIZE, p->world_y + PLAYER_SIZE + 1, map, map_w, map_h);
+    p->on_ground = (IS_SOLID(foot_l) || IS_SOLID(foot_r)) ? 1 : 0;
+
     // --- Gravity ---
-    p->vel_y += GRAVITY;
-    if (p->vel_y > MAX_FALL_SPEED) p->vel_y = MAX_FALL_SPEED;
+    if (!p->on_ground) {
+        p->vel_y += GRAVITY;
+        if (p->vel_y > MAX_FALL_SPEED) p->vel_y = MAX_FALL_SPEED;
+    }
 
     // --- Jump: A button, only on ground, no hold-to-rejump ---
     uint8_t a_now = (joy & J_A) ? 1u : 0u;
     if (a_now && !p->jump_held && p->on_ground) {
         p->vel_y = JUMP_FORCE;
-        p->on_ground = 0;
+        p->on_ground = 0; // We just jumped, so we aren't on the ground anymore
     }
     p->jump_held = a_now;
 
