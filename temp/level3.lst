@@ -41,7 +41,7 @@
                                      41 ; code
                                      42 ;--------------------------------------------------------
                                      43 	.area _CODE_4
-                                     44 ;src/level3.c:4: INCBIN(polargeist_map, "levels/level_data/polargeist_16high.bin")
+                                     44 ;src/level3.c:3: INCBIN(polargeist_map, "levels/level_data/polargeist_16high.bin")
                                      45 ;	---------------------------------
                                      46 ; Function __func_polargeist_map
                                      47 ; ---------------------------------

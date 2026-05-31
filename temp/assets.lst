@@ -12,121 +12,86 @@
                                      12 	.globl _level_pg
                                      13 	.globl _level_bot
                                      14 	.globl _level_sm
-                                     15 	.globl b___func_famidash_chr_tiles
-                                     16 	.globl ___func_famidash_chr_tiles
+                                     15 ;--------------------------------------------------------
+                                     16 ; special function registers
                                      17 ;--------------------------------------------------------
-                                     18 ; special function registers
+                                     18 	.area _HRAM
                                      19 ;--------------------------------------------------------
-                                     20 	.area _HRAM
+                                     20 ; ram data
                                      21 ;--------------------------------------------------------
-                                     22 ; ram data
+                                     22 	.area _DATA
                                      23 ;--------------------------------------------------------
-                                     24 	.area _DATA
+                                     24 ; ram data
                                      25 ;--------------------------------------------------------
-                                     26 ; ram data
+                                     26 	.area _INITIALIZED
                                      27 ;--------------------------------------------------------
-                                     28 	.area _INITIALIZED
+                                     28 ; absolute external ram data
                                      29 ;--------------------------------------------------------
-                                     30 ; absolute external ram data
+                                     30 	.area _DABS (ABS)
                                      31 ;--------------------------------------------------------
-                                     32 	.area _DABS (ABS)
+                                     32 ; global & static initialisations
                                      33 ;--------------------------------------------------------
-                                     34 ; global & static initialisations
-                                     35 ;--------------------------------------------------------
-                                     36 	.area _HOME
+                                     34 	.area _HOME
+                                     35 	.area _GSINIT
+                                     36 	.area _GSFINAL
                                      37 	.area _GSINIT
-                                     38 	.area _GSFINAL
-                                     39 	.area _GSINIT
+                                     38 ;--------------------------------------------------------
+                                     39 ; Home
                                      40 ;--------------------------------------------------------
-                                     41 ; Home
-                                     42 ;--------------------------------------------------------
-                                     43 	.area _HOME
-                                     44 	.area _HOME
+                                     41 	.area _HOME
+                                     42 	.area _HOME
+                                     43 ;--------------------------------------------------------
+                                     44 ; code
                                      45 ;--------------------------------------------------------
-                                     46 ; code
-                                     47 ;--------------------------------------------------------
-                                     48 	.area _CODE_1
-                                     49 ;src/assets.c:6: INCBIN(famidash_chr_tiles, "levels/famidash/famidash_chr_tiles.bin")
-                                     50 ;	---------------------------------
-                                     51 ; Function __func_famidash_chr_tiles
-                                     52 ; ---------------------------------
-                         00000001    53 	b___func_famidash_chr_tiles	= 1
-    00000000                         54 ___func_famidash_chr_tiles::
-    00000000                         55 _famidash_chr_tiles::
-    00000000                         56 1$:
-    00000000 00 00 00 00 00 00 00    57 	.incbin "levels/famidash/famidash_chr_tiles.bin" 
-             00 00 00 00 00 00 00
-             00 00 00 00 FF FF 7F
-             7F 7F 7F 7F 7F 3F 3F
-             1F 1F 0E 0E 00 00 7F
-             7F 3F 3F 1F 1F 0F 0F
-             07 07 03 03 00 00 00
-             00 FF FF FF FF FF FF
-             FF FF FF FF 1F 1F 0E
-             0E 00 00 FE FE FC FC
-             F8 F8 F0 F0 C0 C0 00
-             00 00 00 00 7E 2A 7E
-             3C 3C 3C 3C 18 18 18
-             18 00 00 00 00 FF FF
-             FF FF 5B 5B 12 12 10
-             10 00 00 00 00 00 00
-             FF FF FF FF EE EE E4
-             E4 40 40 40 40 00 00
-             00 00
-    00001000                         58 2$:
-                         00001000    59 	___size_famidash_chr_tiles = (2$-1$) 
-                                     60 	.globl ___size_famidash_chr_tiles 
-                                     61 	.local b___func_famidash_chr_tiles 
-                         00000001    62 	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
-                                     63 	.globl ___bank_famidash_chr_tiles 
-                                     64 	.area _CODE_1
-    00001000                         65 _level_sm:
-    00001000r34r10                   66 	.dw __str_0
-    00001002r00r00                   67 	.dw _famidash_chr_tiles
-    00001004r00r00                   68 	.dw _stereomadness_map
-    00001006 00 01                   69 	.dw #0x0100
-    00001008 7E 03                   70 	.dw #0x037e
-    0000100A 10 00                   71 	.dw #0x0010
-    0000100C 00                      72 	.db #0x00	; 0
-    0000100D 00                      73 	.db #0x00	; 0
-    0000100Er00                      74 	.byte ___bank_stereomadness_map
-    0000100F                         75 _level_bot:
-    0000100Fr43r10                   76 	.dw __str_1
-    00001011r00r00                   77 	.dw _famidash_chr_tiles
-    00001013r00r00                   78 	.dw _backontrack_map
-    00001015 00 01                   79 	.dw #0x0100
-    00001017 4E 03                   80 	.dw #0x034e
-    00001019 10 00                   81 	.dw #0x0010
-    0000101B 00                      82 	.db #0x00	; 0
-    0000101C 00                      83 	.db #0x00	; 0
-    0000101Dr00                      84 	.byte ___bank_backontrack_map
-    0000101E                         85 _level_pg:
-    0000101Er51r10                   86 	.dw __str_2
-    00001020r00r00                   87 	.dw _famidash_chr_tiles
-    00001022r00r00                   88 	.dw _polargeist_map
-    00001024 00 01                   89 	.dw #0x0100
-    00001026 A6 03                   90 	.dw #0x03a6
-    00001028 10 00                   91 	.dw #0x0010
-    0000102A 00                      92 	.db #0x00	; 0
-    0000102B 00                      93 	.db #0x00	; 0
-    0000102Cr00                      94 	.byte ___bank_polargeist_map
-    0000102D                         95 _game_levels:
-    0000102Dr00r10                   96 	.dw _level_sm
-    0000102Fr0Fr10                   97 	.dw _level_bot
-    00001031r1Er10                   98 	.dw _level_pg
-    00001033                         99 _MAX_LEVELS:
-    00001033 03                     100 	.db #0x03	; 3
-    00001034                        101 __str_0:
-    00001034 53 54 45 52 45 4F 20   102 	.ascii "STEREO MADNESS"
-             4D 41 44 4E 45 53 53
-    00001042 00                     103 	.db 0x00
-    00001043                        104 __str_1:
-    00001043 42 41 43 4B 20 4F 4E   105 	.ascii "BACK ON TRACK"
+                                     46 	.area _CODE
+                                     47 	.area _CODE
+    00000000                         48 _level_sm:
+    00000000r34r00                   49 	.dw __str_0
+    00000002r00r00                   50 	.dw _famidash_chr_tiles
+    00000004r00r00                   51 	.dw _stereomadness_map
+    00000006 00 01                   52 	.dw #0x0100
+    00000008 7E 03                   53 	.dw #0x037e
+    0000000A 10 00                   54 	.dw #0x0010
+    0000000C 00                      55 	.db #0x00	; 0
+    0000000D 00                      56 	.db #0x00	; 0
+    0000000Er00                      57 	.byte ___bank_stereomadness_map
+    0000000F                         58 _level_bot:
+    0000000Fr3Fr00                   59 	.dw __str_1
+    00000011r00r00                   60 	.dw _famidash_chr_tiles
+    00000013r00r00                   61 	.dw _backontrack_map
+    00000015 00 01                   62 	.dw #0x0100
+    00000017 4E 03                   63 	.dw #0x034e
+    00000019 10 00                   64 	.dw #0x0010
+    0000001B 00                      65 	.db #0x00	; 0
+    0000001C 00                      66 	.db #0x00	; 0
+    0000001Dr00                      67 	.byte ___bank_backontrack_map
+    0000001E                         68 _level_pg:
+    0000001Er4Dr00                   69 	.dw __str_2
+    00000020r00r00                   70 	.dw _famidash_chr_tiles
+    00000022r00r00                   71 	.dw _polargeist_map
+    00000024 00 01                   72 	.dw #0x0100
+    00000026 A6 03                   73 	.dw #0x03a6
+    00000028 10 00                   74 	.dw #0x0010
+    0000002A 00                      75 	.db #0x00	; 0
+    0000002B 00                      76 	.db #0x00	; 0
+    0000002Cr00                      77 	.byte ___bank_polargeist_map
+    0000002D                         78 _game_levels:
+    0000002Dr00r00                   79 	.dw _level_sm
+    0000002Fr0Fr00                   80 	.dw _level_bot
+    00000031r1Er00                   81 	.dw _level_pg
+    00000033                         82 _MAX_LEVELS:
+    00000033 03                      83 	.db #0x03	; 3
+    00000034                         84 __str_0:
+    00000034 53 54 45 52 45 4F 20    85 	.ascii "STEREO MAD"
+             4D 41 44
+    0000003E 00                      86 	.db 0x00
+    0000003F                         87 __str_1:
+    0000003F 42 41 43 4B 20 4F 4E    88 	.ascii "BACK ON TRACK"
              20 54 52 41 43 4B
-    00001050 00                     106 	.db 0x00
-    00001051                        107 __str_2:
-    00001051 50 4F 4C 41 52 47 45   108 	.ascii "POLARGEIST"
+    0000004C 00                      89 	.db 0x00
+    0000004D                         90 __str_2:
+    0000004D 50 4F 4C 41 52 47 45    91 	.ascii "POLARGEIST"
              49 53 54
-    0000105B 00                     109 	.db 0x00
-                                    110 	.area _INITIALIZER
-                                    111 	.area _CABS (ABS)
+    00000057 00                      92 	.db 0x00
+                                     93 	.area _INITIALIZER
+                                     94 	.area _CABS (ABS)

@@ -1,56 +1,44 @@
-#pragma bank 1
+// assets.c — NO #pragma bank = bank 0 (home bank, always accessible)
+// Level structs must be in bank 0 so main.c can read them without switching.
 #include <gbdk/incbin.h>
 #include "assets.h"
 
-//Bank 1
-INCBIN(famidash_chr_tiles, "levels/famidash/famidash_chr_tiles.bin")
-INCBIN_EXTERN(famidash_chr_tiles)
+// Forward declarations — data lives in their own bank files
+BANKREF_EXTERN(famidash_chr_tiles)
+        extern const uint8_t famidash_chr_tiles[];
 
-//level1.c
-BANKREF_EXTERN(stereomadness_map)
+                BANKREF_EXTERN(stereomadness_map)
 extern const uint8_t stereomadness_map[];
 
-//level2.c
 BANKREF_EXTERN(backontrack_map)
-extern const uint8_t backontrack_map[];
+        extern const uint8_t backontrack_map[];
 
-//level2.c
-BANKREF_EXTERN(polargeist_map)
+                BANKREF_EXTERN(polargeist_map)
 extern const uint8_t polargeist_map[];
 
 const Level level_sm = {
-    "STEREO MADNESS",
-    famidash_chr_tiles,
-    stereomadness_map,
-    256,
-    894,
-    16,
-    0, 0,
-    BANK(stereomadness_map) 
+        "STEREO MAD",
+        famidash_chr_tiles,
+        stereomadness_map,
+        256, 894, 16, 0, 0,
+        BANK(stereomadness_map)
 };
 
 const Level level_bot = {
-    "BACK ON TRACK",
-    famidash_chr_tiles,
-    backontrack_map,
-    256,
-    846,
-    16,
-    0, 0,
-    BANK(backontrack_map) 
+        "BACK ON TRACK",
+        famidash_chr_tiles,
+        backontrack_map,
+        256, 846, 16, 0, 0,
+        BANK(backontrack_map)
 };
 
 const Level level_pg = {
-    "POLARGEIST",
-    famidash_chr_tiles,
-    polargeist_map,
-    256,
-    934,
-    16,
-    0, 0,
-    BANK(polargeist_map)
+        "POLARGEIST",
+        famidash_chr_tiles,
+        polargeist_map,
+        256, 934, 16, 0, 0,
+        BANK(polargeist_map)
 };
 
-
-const Level* const game_levels[] = { &level_sm, &level_bot, &level_pg };
+const Level * const game_levels[] = { &level_sm, &level_bot, &level_pg };
 const uint8_t MAX_LEVELS = 3;

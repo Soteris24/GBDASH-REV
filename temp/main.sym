@@ -18,9 +18,7 @@ Symbol Table
     _SCY_REG                                                        ******** GX
     _TAC_REG                                                        ******** GX
     _TMA_REG                                                        ******** GX
-  0 ___str_1                                                        0000148E R
-  0 ___str_2                                                        00001496 R
-  0 ___str_3                                                        0000149B R
+    ___bank_famidash_chr_tiles                                      ******** GX
     __current_bank                                                  ******** GX
     __mulint                                                        ******** GX
   8 __xinit__music_ready                                            00000000 R
@@ -29,40 +27,30 @@ Symbol Table
     _add_TIM                                                        ******** GX
   0 _col_at                                                         00000009 R
   0 _col_of                                                         00000000 R
-  0 _col_point                                                      000000B8 R
-  0 _cube_tiles                                                     0000124A GR
+  0 _col_point                                                      000000B2 R
+  0 _cube_tiles                                                     000010ED GR
     _display_off                                                    ******** GX
-  0 _draw_menu                                                      0000140C GR
-  0 _draw_mt_column                                                 000012CB GR
-  0 _famidash_metatile_collision                                    0000114A GR
-  0 _famidash_metatile_palettes                                     0000104A GR
-    _fill_bkg_rect                                                  ******** GX
-  0 _fill_scroll_bg                                                 000013BF GR
+  0 _draw_menu                                                      000012AF GR
+  0 _draw_mt_column                                                 0000116E GR
+    _famidash_metatile_collision                                    ******** GX
+  0 _fill_scroll_bg                                                 00001262 GR
     _font_init                                                      ******** GX
     _font_load                                                      ******** GX
     _font_min                                                       ******** GX
     _font_set                                                       ******** GX
     _game_levels                                                    ******** GX
-    _gotoxy                                                         ******** GX
     _hUGE_dosound                                                   ******** GX
     _hUGE_init                                                      ******** GX
     _joypad                                                         ******** GX
-  0 _load_bkg_tileset                                               0000129B GR
-  0 _main                                                           0000200B GR
-  0 _metatiles                                                      00000C4A GR
+  0 _load_bkg_tileset                                               0000113E GR
+  0 _main                                                           00002482 GR
+    _metatiles                                                      ******** GX
   3 _music_ready                                                    00000000 GR
-  0 _play_level                                                     000014A0 GR
-  0 _play_music_safe                                                00000C42 GR
+  0 _play_level                                                     000012B0 GR
+  0 _play_music_safe                                                000010E5 GR
   0 _player_init                                                    0000008C R
-  0 _player_screen_y                                                00000C36 R
-  0 _player_update                                                  00000155 R
-    _printf                                                         ******** GX
-    _puts                                                           ******** GX
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
-Hexadecimal [32-Bits]
-
-Symbol Table
-
+  0 _player_screen_y                                                000010D9 R
+  0 _player_update                                                  0000014F R
     _rROMB0                                                         ******** GX
   3 _redraw                                                         00000001 GR
   3 _selected                                                       00000002 GR
@@ -70,19 +58,23 @@ Symbol Table
     _set_bkg_tiles                                                  ******** GX
     _set_interrupts                                                 ******** GX
     _set_sprite_data                                                ******** GX
-  0 _setup_menu_font                                                0000128A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
+Hexadecimal [32-Bits]
+
+Symbol Table
+
+  0 _setup_menu_font                                                0000112D GR
     _shadow_OAM                                                     ******** GX
     _song_stereoma                                                  ******** GX
     _wait_vbl_done                                                  ******** GX
     _waitpadup                                                      ******** GX
-
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 3
 Hexadecimal [32-Bits]
 
 Area Table
 
-   0 _CODE                                      size     20B5   flags    0
+   0 _CODE                                      size     253E   flags    0
    1 _HRAM                                      size        0   flags    0
    2 _DATA                                      size        0   flags    0
    3 _INITIALIZED                               size        3   flags    0

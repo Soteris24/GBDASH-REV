@@ -12,8 +12,6 @@
 	.globl _level_pg
 	.globl _level_bot
 	.globl _level_sm
-	.globl b___func_famidash_chr_tiles
-	.globl ___func_famidash_chr_tiles
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -45,23 +43,8 @@
 ;--------------------------------------------------------
 ; code
 ;--------------------------------------------------------
-	.area _CODE_1
-;src/assets.c:6: INCBIN(famidash_chr_tiles, "levels/famidash/famidash_chr_tiles.bin")
-;	---------------------------------
-; Function __func_famidash_chr_tiles
-; ---------------------------------
-	b___func_famidash_chr_tiles	= 1
-___func_famidash_chr_tiles::
-_famidash_chr_tiles::
-1$:
-	.incbin "levels/famidash/famidash_chr_tiles.bin" 
-2$:
-	___size_famidash_chr_tiles = (2$-1$) 
-	.globl ___size_famidash_chr_tiles 
-	.local b___func_famidash_chr_tiles 
-	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
-	.globl ___bank_famidash_chr_tiles 
-	.area _CODE_1
+	.area _CODE
+	.area _CODE
 _level_sm:
 	.dw __str_0
 	.dw _famidash_chr_tiles
@@ -99,7 +82,7 @@ _game_levels:
 _MAX_LEVELS:
 	.db #0x03	; 3
 __str_0:
-	.ascii "STEREO MADNESS"
+	.ascii "STEREO MAD"
 	.db 0x00
 __str_1:
 	.ascii "BACK ON TRACK"

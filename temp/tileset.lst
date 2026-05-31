@@ -2,13 +2,13 @@
                                       2 ; File Created by SDCC : free open source ISO C Compiler
                                       3 ; Version 4.5.1 #15267 (MINGW64)
                                       4 ;--------------------------------------------------------
-                                      5 	.module level1
+                                      5 	.module tileset
                                       6 	
                                       7 ;--------------------------------------------------------
                                       8 ; Public variables in this module
                                       9 ;--------------------------------------------------------
-                                     10 	.globl b___func_stereomadness_map
-                                     11 	.globl ___func_stereomadness_map
+                                     10 	.globl b___func_famidash_chr_tiles
+                                     11 	.globl ___func_famidash_chr_tiles
                                      12 ;--------------------------------------------------------
                                      13 ; special function registers
                                      14 ;--------------------------------------------------------
@@ -40,40 +40,40 @@
                                      40 ;--------------------------------------------------------
                                      41 ; code
                                      42 ;--------------------------------------------------------
-                                     43 	.area _CODE_2
-                                     44 ;src/level1.c:3: INCBIN(stereomadness_map, "levels/level_data/stereomadness_16high.bin")
+                                     43 	.area _CODE_1
+                                     44 ;src/tileset.c:6: INCBIN(famidash_chr_tiles, "levels/famidash/famidash_chr_tiles.bin")
                                      45 ;	---------------------------------
-                                     46 ; Function __func_stereomadness_map
+                                     46 ; Function __func_famidash_chr_tiles
                                      47 ; ---------------------------------
-                         00000002    48 	b___func_stereomadness_map	= 2
-    00000000                         49 ___func_stereomadness_map::
-    00000000                         50 _stereomadness_map::
+                         00000001    48 	b___func_famidash_chr_tiles	= 1
+    00000000                         49 ___func_famidash_chr_tiles::
+    00000000                         50 _famidash_chr_tiles::
     00000000                         51 1$:
-    00000000 00 00 00 00 00 00 00    52 	.incbin "levels/level_data/stereomadness_16high.bin" 
+    00000000 00 00 00 00 00 00 00    52 	.incbin "levels/famidash/famidash_chr_tiles.bin" 
              00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
-             00 00 00 00 00 00 00
+             00 00 00 00 FF FF 7F
+             7F 7F 7F 7F 7F 3F 3F
+             1F 1F 0E 0E 00 00 7F
+             7F 3F 3F 1F 1F 0F 0F
+             07 07 03 03 00 00 00
+             00 FF FF FF FF FF FF
+             FF FF FF FF 1F 1F 0E
+             0E 00 00 FE FE FC FC
+             F8 F8 F0 F0 C0 C0 00
+             00 00 00 00 7E 2A 7E
+             3C 3C 3C 3C 18 18 18
+             18 00 00 00 00 FF FF
+             FF FF 5B 5B 12 12 10
+             10 00 00 00 00 00 00
+             FF FF FF FF EE EE E4
+             E4 40 40 40 40 00 00
              00 00
-    000037E0                         53 2$:
-                         000037E0    54 	___size_stereomadness_map = (2$-1$) 
-                                     55 	.globl ___size_stereomadness_map 
-                                     56 	.local b___func_stereomadness_map 
-                         00000002    57 	___bank_stereomadness_map = b___func_stereomadness_map 
-                                     58 	.globl ___bank_stereomadness_map 
-                                     59 	.area _CODE_2
+    00001000                         53 2$:
+                         00001000    54 	___size_famidash_chr_tiles = (2$-1$) 
+                                     55 	.globl ___size_famidash_chr_tiles 
+                                     56 	.local b___func_famidash_chr_tiles 
+                         00000001    57 	___bank_famidash_chr_tiles = b___func_famidash_chr_tiles 
+                                     58 	.globl ___bank_famidash_chr_tiles 
+                                     59 	.area _CODE_1
                                      60 	.area _INITIALIZER
                                      61 	.area _CABS (ABS)

@@ -41,7 +41,7 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE_2
-;src/level1.c:4: INCBIN(stereomadness_map, "levels/level_data/stereomadness_16high.bin")
+;src/level1.c:3: INCBIN(stereomadness_map, "levels/level_data/stereomadness_16high.bin")
 ;	---------------------------------
 ; Function __func_stereomadness_map
 ; ---------------------------------

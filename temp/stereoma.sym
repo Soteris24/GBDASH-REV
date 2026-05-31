@@ -7,30 +7,30 @@ Symbol Table
     .__.ABS.                                                    =   00000000 G
     .__.CPU.                                                    =   00000000 L
     .__.H$L.                                                    =   00000000 L
-  0 _P0                                                             00000001 R
-  0 _P1                                                             000000C1 R
-  0 _P2                                                             00000181 R
-  0 _P4                                                             00000241 R
-  0 _P5                                                             00000301 R
-  0 _P6                                                             000003C1 R
-  0 _P9                                                             00000481 R
-  0 _duty_instruments                                               00000569 R
-  0 _noise_instruments                                              00000599 R
-  0 _order1                                                         00000541 R
-  0 _order2                                                         0000054B R
-  0 _order3                                                         00000555 R
-  0 _order4                                                         0000055F R
-  0 _order_cnt                                                      00000000 R
-  0 _song_stereoma                                                  0000061B GR
-  0 _wave_instruments                                               0000056F R
-  0 _waves                                                          000005AB R
+  8 _P0                                                             00000001 R
+  8 _P1                                                             000000C1 R
+  8 _P2                                                             00000181 R
+  8 _P4                                                             00000241 R
+  8 _P5                                                             00000301 R
+  8 _P6                                                             000003C1 R
+  8 _P9                                                             00000481 R
+  8 _duty_instruments                                               00000569 R
+  8 _noise_instruments                                              00000599 R
+  8 _order1                                                         00000541 R
+  8 _order2                                                         0000054B R
+  8 _order3                                                         00000555 R
+  8 _order4                                                         0000055F R
+  8 _order_cnt                                                      00000000 R
+  8 _song_stereoma                                                  0000061B GR
+  8 _wave_instruments                                               0000056F R
+  8 _waves                                                          000005AB R
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy)                  Page 2
 Hexadecimal [32-Bits]
 
 Area Table
 
-   0 _CODE                                      size      630   flags    0
+   0 _CODE                                      size        0   flags    0
    1 _HRAM                                      size        0   flags    0
    2 _DATA                                      size        0   flags    0
    3 _INITIALIZED                               size        0   flags    0
@@ -38,6 +38,7 @@ Area Table
    5 _HOME                                      size        0   flags    0
    6 _GSINIT                                    size        0   flags    0
    7 _GSFINAL                                   size        0   flags    0
-   8 _INITIALIZER                               size        0   flags    0
-   9 _CABS                                      size        0   flags    8
+   8 _CODE_5                                    size      630   flags    0
+   9 _INITIALIZER                               size        0   flags    0
+   A _CABS                                      size        0   flags    8
 

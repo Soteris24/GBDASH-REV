@@ -41,7 +41,7 @@
                                      41 ; code
                                      42 ;--------------------------------------------------------
                                      43 	.area _CODE_3
-                                     44 ;src/level2.c:4: INCBIN(backontrack_map, "levels/level_data/backontrack_16high.bin")
+                                     44 ;src/level2.c:3: INCBIN(backontrack_map, "levels/level_data/backontrack_16high.bin")
                                      45 ;	---------------------------------
                                      46 ; Function __func_backontrack_map
                                      47 ; ---------------------------------
